@@ -132,7 +132,52 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1000);
         });
     }
+    
+    // Копирование адреса контракта
+    // Добавляем элемент для уведомления
+    if (!document.querySelector('.copy-notification')) {
+        const notification = document.createElement('div');
+        notification.className = 'copy-notification';
+        notification.textContent = 'Адрес скопирован!';
+        document.body.appendChild(notification);
+    }
 });
+
+// Функция для копирования адреса контракта
+function copyToClipboard() {
+    const address = document.querySelector('.contract-address .address').textContent;
+    const notification = document.querySelector('.copy-notification');
+    
+    // Используем современный API для копирования
+    navigator.clipboard.writeText(address)
+        .then(() => {
+            // Показываем уведомление
+            notification.classList.add('show');
+            
+            // Скрываем уведомление через 2 секунды
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Не удалось скопировать адрес: ', err);
+            // Запасной вариант для старых браузеров
+            const textArea = document.createElement('textarea');
+            textArea.value = address;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            
+            // Показываем уведомление
+            notification.classList.add('show');
+            
+            // Скрываем уведомление через 2 секунды
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 2000);
+        });
+}
 
 // Добавляем стили для анимаций
 document.head.insertAdjacentHTML('beforeend', `
