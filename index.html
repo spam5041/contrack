@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COIN - Solana Token</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <div class="logo">
+                    <h1>COIN</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="#about">О проекте</a>
+                    <a href="#tokenomics">Токеномика</a>
+                    <a href="#buy" class="cta-button">Купить</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">COIN</h1>
+                    <p class="hero-subtitle">Новая эра цифровых активов на Solana</p>
+                    <div class="mint-address">
+                        <label>Mint адрес:</label>
+                        <div class="address-container">
+                            <span class="address" id="mintAddress">6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN</span>
+                            <button class="copy-btn" onclick="copyAddress()">Копировать</button>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="buyToken()">Купить COIN</button>
+                        <button class="btn-secondary" onclick="addToWallet()">Добавить в кошелёк</button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="coin-animation">
+                        <div class="coin">COIN</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="about">
+                <div class="section-content">
+                    <h2>О COIN</h2>
+                    <p>COIN - это инновационный токен на блокчейне Solana, созданный для быстрых и дешёвых транзакций. Наша миссия - сделать криптовалюты доступными для всех.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <h3>⚡ Быстрые транзакции</h3>
+                            <p>Транзакции обрабатываются за секунды благодаря мощности Solana</p>
+                        </div>
+                        <div class="feature">
+                            <h3>💰 Низкие комиссии</h3>
+                            <p>Минимальные комиссии за переводы и обмены</p>
+                        </div>
+                        <div class="feature">
+                            <h3>🔒 Безопасность</h3>
+                            <p>Защищено технологией блокчейн Solana</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tokenomics" class="tokenomics">
+                <div class="section-content">
+                    <h2>Токеномика</h2>
+                    <div class="tokenomics-grid">
+                        <div class="tokenomics-item">
+                            <h3>Общий объём</h3>
+                            <p>1,000,000,000 COIN</p>
+                        </div>
+                        <div class="tokenomics-item">
+                            <h3>Блокчейн</h3>
+                            <p>Solana</p>
+                        </div>
+                        <div class="tokenomics-item">
+                            <h3>Стандарт</h3>
+                            <p>SPL Token</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 COIN. Все права защищены.</p>
+                <div class="social-links">
+                    <a href="#">Twitter</a>
+                    <a href="#">Telegram</a>
+                    <a href="#">Discord</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
